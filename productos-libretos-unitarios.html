@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Televisa Univisión | ADSHUB</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Clases momentaneas -->
+<style>
+
+.mainBack{
+  background: rgb(62,31,20);
+  background: linear-gradient(75deg, rgba(62,31,20,1) 0%, rgba(24,50,43,1) 39%, rgba(17,17,17,1) 77%);
+}
+
+#user-role-2{
+  background-color: #000;
+  border-color:  #000;
+  color: #fff;
+}
+  .colorName{
+    color: #fff!important;
+  }
+  .colorSection{
+    color: #FF5900!important;
+  }
+  .titleSection{
+    font-size: 1.8rem!important;
+  }
+
+  .iconHeadSection{
+    max-width: 30px!important;
+  }
+  .IconArrowBack{
+    max-width: 20px!important;
+  }
+  .menuSection{
+    color: #FF5900!important;
+    font-size: 0.9rem!important;
+    font-weight: 600;
+  }
+  .SmallTxt{
+    font-size: 0.8rem!important;
+    color:#8A8A8A;
+    font-weight: 700;
+  }
+
+
+  .DataTable{
+    background-color: #F1F2F9;
+    border-radius: 10px;
+  }
+
+  .DataTxtTable{
+    font-size: 1.2rem!important;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .DataTxtSubTable{
+    font-size: 0.899rem!important;
+    font-weight: 500;
+    color: #4F4F4F;
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+
+  .TDDataTable{
+    background-color: #F1F2F9!important;
+    border-radius: 10px;
+    font-size: 0.69rem;
+ 
+  }
+
+  .table-trans.table-responsive {
+    overflow-x: auto!important;
+  }
+  
+
+/* Estilos del tab */
+
+
+
+/* Centrar los tabs */
+#menuTab {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+#menuTab .nav-link {
+  background: none; 
+  border: none; 
+  margin-bottom: 0; 
+  padding: 10px 20px; 
+  position: relative; 
+  color: #8A8A8A; 
+  font-weight: 400; 
+}
+
+/* Línea inferior para el tab activo */
+#menuTab .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; 
+  background-color: transparent; 
+  transition: all 0.3s ease;
+}
+
+/* Línea que aparece solo cuando el tab está activo */
+#menuTab .nav-link.active::after {
+  background-color: #FF5900;
+}
+
+/* Cambiar color del texto cuando el tab está activo */
+#menuTab .nav-link.active {
+  color:#FF5900;
+}
+
+
+
+</style>
+</head>
+
+<body >
+  <main>
+    <section class="content content-header col-12 mainBack">
+      <div class="d-flex flex-column">
+        <div class="col-12 py-4 px-3">
+          <header>
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 py-2">
+              <!-- Primera columna: Logo y selects en una fila -->
+              <div class="col-12 col-md-7 d-flex align-items-center gap-3" style="flex: 1;">
+                <img src="/assets/images/logos/logo_main.svg" alt="Logo Televisa ADSHUB" style="width: 400px;">
+                <div class="d-flex gap-2">
+                  <select class="form-select" id="user-role-1">
+                    <option value="admin">Mis campañas</option>
+                    <option value="editor">option1</option>
+                    <option value="viewer">option2</option>
+                  </select>
+                  <select class="form-select" id="user-role-2">
+                    <option value="admin">Mis Reportes</option>
+                    <option value="editor">option1</option>
+                    <option value="viewer">option2</option>
+                  </select>
+                </div>
+              </div>
+            
+              <!-- Segunda columna: Campo de búsqueda más pequeño -->
+              <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+                <form class="search input-group w-100" role="search">
+                  <span class="input-group-text">
+                    <img src="/assets/images/icons/icon-search.svg" alt="Buscar" style="width: 20px;">
+                  </span>
+                  <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                </form>
+              </div>
+            
+              <!-- Tercera columna: Usuario e iconos reordenados -->
+              <div class="col-12 col-md-3 d-flex align-items-center justify-content-end gap-3">
+                <img src="/assets/images/icons/icon_user.png" alt="Usuario" style="width: 40px;">
+                <div class="d-flex flex-column align-items-start text-start">
+                  <p class="mb-0 colorName">Aldo Fernández Martínez</p>
+                  <small class="colorName" >Administrador</small>
+                </div>
+                <img src="/assets/images/icons/notifications.svg" alt="notificaciones" style="width: 30px;">
+              </div>
+            </div>
+            
+            <!-- Título debajo de las columnas -->
+            <div class="title-content d-flex flex-column align-items-start gap-1 mt-5">
+              <p class="mb-0 colorName">Booking > <small class="colorSection">Mis Campañas</small></p>
+              <h5 class="mb-0 colorName titleSection">Detalle de campaña</h5>
+            </div>
+            
+
+          </header>
+          <div>
+
+            <div class="table-content p-4 my-3">
+           
+            
+
+              <div class="d-flex align-items-center flex-wrap">
+                <!-- Primera columna: Back-arrow, ID y Campaña -->
+                <div class="col-12 col-lg-4 d-flex gap-3 align-items-center flex-wrap">
+                  <!-- Ícono de back-arrow -->
+                  <img src="assets/images/icons/icon-arrow_back.svg" alt="back" class="IconArrowBack">
+                  
+                  <!-- ID de seguimiento -->
+                  <div class="d-flex flex-column">
+                    <p class="SmallTxt">Id de Seguimiento</p>
+                    <h4 class="DataTxtTable">290704</h4>
+                  </div>
+                  
+                  <!-- Campaña -->
+                  <div class="d-flex flex-column">
+                    <p class="SmallTxt">Campaña</p>
+                    <h4 class="DataTxtTable">Compra Sanofi Omnet O.xlsx</h4>
+                  </div>
+                </div>
+              
+                <!-- Segunda columna: Menú de acciones -->
+                <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-md-between flex-wrap gap-3">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="assets/images/icons/icon-history.svg" alt="History" class="iconHeadSection">
+                    <p class="menuSection mb-0">HISTORIAL DE ACTIVIDAD</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="assets/images/icons/icon-edit.svg" alt="EDITAR IMPACTOS EN CAMPAÑA" class="iconHeadSection">
+                    <p class="menuSection mb-0">EDITAR IMPACTOS EN CAMPAÑA</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="assets/images/icons/icon-edit.svg" alt="SOLICITAR CANCELACIÓN DE CAMPAÑA" class="iconHeadSection">
+                    <p class="menuSection mb-0">SOLICITAR CANCELACIÓN DE CAMPAÑA</p>
+                  </div>
+                </div>
+              
+                <!-- Tercera columna: Botón de actualizar -->
+                <div class="col-12 col-lg-2 d-flex align-items-center justify-content-end px-3">
+                  <button class="btn btn-light btn-lg w-100 h-100">Actualizar información</button>
+                </div>
+              </div>
+              
+
+
+              <!--Datos de la tabla -->
+             
+
+              <div class="d-flex flex-wrap py-4 px-4 my-4 DataTable">
+                <!-- Primera fila -->
+                <div class="row w-100">
+                  <!-- Columna 1: Cliente, Campaña, Master contract -->
+                  <div class="col-12 col-sm-1 d-flex flex-column text-left px-3">
+                    <p class="SmallTxt mb-2">Cliente</p>
+                    <h4 class="DataTxtSubTable mb-3">SANOFA​</h4>
+              
+                    <p class="SmallTxt mb-2">Campaña</p>
+                    <h4 class="DataTxtSubTable mb-3">318869​</h4>
+
+                    <p class="SmallTxt mb-2">Clave de agencia</p>
+                    <h4 class="DataTxtSubTable mb-3">PHDMEX​​</h4>
+              
+                  
+                  </div>
+              
+                  <!-- Columna 2: Ratecard, Deal, Clave de agencia -->
+                  <div class="col-12 col-sm-2 d-flex flex-column text-left px-3">
+                    <p class="SmallTxt mb-2">Master contract</p>
+                    <h4 class="DataTxtSubTable mb-3">DF240001.MD​</h4>
+
+                    <p class="SmallTxt mb-2">Ratecard</p>
+                    <h4 class="DataTxtSubTable mb-3">24CPMMODP19SANOFI_10 A 10​​</h4>
+
+                    <p class="SmallTxt mb-2">Total de spots colocados</p>
+                    <h4 class="DataTxtSubTable mb-3">40</h4>
+              
+                   
+              
+                   
+                  </div>
+              
+                  <!-- Columna 3: Clave de módulo, Total de spots colocados -->
+                  <div class="col-12 col-sm-3 d-flex flex-column text-left px-3">
+
+                    <p class="SmallTxt mb-2">Deal</p>
+                    <h4 class="DataTxtSubTable mb-3">16359​</h4>
+
+                    <p class="SmallTxt mb-2">Clave de módulo</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <h4 class="DataTxtSubTable mb-0">2024_TVA_MD_SANOFA_P19+_SR-2​</h4>
+                      <img src="assets/images/icons/icon-error.svg" alt="Icon" class="ml-2" style="width: 20px; margin-left: 10px;">
+                    </div>
+
+                    <p class="SmallTxt mb-2">Producto</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <h4 class="DataTxtSubTable mb-0">SANOFA-ALLEGRA​​</h4>
+                      <img src="assets/images/icons/icon-error.svg" alt="Icon" class="ml-2" style="width: 20px; margin-left: 10px;">
+                    </div>
+                  </div>
+              
+                  <!-- Columna 4: Inversión total, Producto -->
+                  <div class="col-12 col-sm-2 d-flex flex-column text-left px-3">
+                    <p class="SmallTxt mb-2">Target</p>
+                    <h4 class="DataTxtSubTable mb-3">T P19+​​</h4>
+
+                    <p class="SmallTxt mb-2">Inversión total</p>
+                    <h4 class="DataTxtSubTable mb-3"><b>$2,914,994.44​​​</b></h4>
+
+                    <p class="SmallTxt mb-2">Email</p>
+                    <h4 class="DataTxtSubTable mb-3">esteban.perez@havasmed.com​</h4>
+                  </div>
+              
+                  <!-- Columna 5: Nombre de campaña, Email -->
+                  <div class="col-12 col-sm-2 d-flex flex-column text-left px-3">
+                    <p class="SmallTxt mb-2">Tipo de servicio</p>
+                    <h4 class="DataTxtSubTable mb-3">COMERCIALES​​</h4>
+
+                    <p class="SmallTxt mb-2">Nombre de campaña</p>
+                    <h4 class="DataTxtSubTable mb-3">PHDMEX​​​</h4>
+
+                    <p class="SmallTxt mb-2">Total de Impactos</p>
+                    <h4 class="DataTxtSubTable mb-3">10,53,40,938.132​</h4>
+              
+                  </div>
+              
+                  <!-- Columna 6: Target, Tipo de servicio, Total de Impactos -->
+                  <div class="col-12 col-sm-2 d-flex flex-column text-left px-3">
+                  
+                    <p class="SmallTxt mb-2">Comentarios</p>
+                    <h4 class="DataTxtSubTable">Campo para agregar comentarios adicionales a la campaña que se presenta.</h4>
+                  
+                   
+
+                    <div class="d-flex align-items-center gap-2 mt-4">
+                      <img src="assets/images/icons/icon-lab_profile.svg" alt="CONSULTA REPORTE PREPAUTA" class="iconHeadSection">
+                      <p class="menuSection mb-0">CONSULTA REPORTE PREPAUTA</p>
+                    </div>
+                  
+                  </div>
+                </div>
+              
+              
+              </div>
+              
+              <!-- Fin datos de la tabla -->
+              
+              
+              <!-- Inicia Tabla -->
+
+           
+           <!-- Estructura de Tabs -->
+           <div class="container-fluid mt-5">
+            <!-- Barra de Tabs -->
+            <ul class="nav nav-tabs" id="menuTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="lineas-tab" data-bs-toggle="tab" href="#lineas" role="tab" aria-controls="lineas" aria-selected="true">Detalles de Líneas</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="spots-tab" data-bs-toggle="tab" href="#spots" role="tab" aria-controls="spots" aria-selected="false">Detalle de Spots</a>
+              </li>
+            </ul>
+          
+            <!-- Contenido de los Tabs -->
+            <div class="tab-content" id="myTabContent">
+              <!-- Tab Detalles de Líneas -->
+              <div class="tab-pane fade show active" id="lineas" role="tabpanel" aria-labelledby="lineas-tab">
+                <!-- Tabla dentro de Tab Detalles de Líneas -->
+                <div class="table-responsive mt-3" style="overflow-x: auto;">
+                  <table class="table table-striped TDDataTable">
+                    <thead class="">
+                      <tr >
+                        <th>
+                          <label for="AGENCIA">AGENCIA</label>
+                          <input type="text" id="AGENCIA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="CLIENTE">CLIENTE</label>
+                          <input type="text" id="CLIENTE" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="PRODUCTO">PRODUCTO</label>
+                          <input type="text" id="PRODUCTO" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="centroCostos">Centro de Costos</label>
+                          <input type="text" id="centroCostos" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="NO. PRODUCTO">NO. PRODUCTO</label>
+                          <input type="text" id="NO. PRODUCTO" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="DEAL">DEAL</label>
+                          <input type="text" id="DEAL" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="CAMPAÑA">CAMPAÑA</label>
+                          <input type="text" id="CAMPAÑA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="VERSIÓN">VERSIÓN</label>
+                          <input type="text" id="VERSIÓN" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="DURACIÓN">DURACIÓN</label>
+                          <input type="text" id="DURACIÓN" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="CANAL">CANAL</label>
+                          <input type="text" id="CANAL" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="FECHA PROGRAMADA">FECHA PROGRAMADA</label>
+                          <input type="date" id="FECHA_PROGRAMADA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="HORA">HORA</label>
+                          <input type="time" id="HORA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="HORA PROGRAMADA">HORA PROGRAMADA</label>
+                          <input type="time" id="HORA_PROGRAMADA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="HORARIO TRANSMITIDO">HORARIO TRANSMITIDO</label>
+                          <input type="time" id="HORARIO_TRANSMITIDO" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="IMPACTOS">IMPACTOS</label>
+                          <input type="text" id="IMPACTOS" class="form-control" />
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Aquí puedes agregar filas de la tabla -->
+                      <tr>
+                        <td>PHD</td>
+                        <td>SANOFI AVENTIS</td>
+                        <td>SANOFA-ALLEGRA</td>
+                        <td>4013</td>
+                        <td>16359</td>
+                        <td>318869</td>
+                        <td>-</td>
+                        <td>15</td>
+                        <td>CANAL 2</td>
+                        <td><input type="date" value="2024-10-22" class="form-control" /></td>
+                        <td><input type="time" value="22:00" class="form-control" /></td>
+                        <td><input type="time" value="22:15" class="form-control" /></td>
+                        <td><input type="time" value="22:15" class="form-control" /></td>
+                        <td><input type="text" value="2.179.963" class="form-control" /></td>
+                        <td>2.179.963</td>
+                      </tr>
+                      <!-- Repite las filas para más registros -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          
+              <!-- Tab Detalle de Spots -->
+              <div class="tab-pane fade" id="spots" role="tabpanel" aria-labelledby="spots-tab">
+                <!-- Mismo contenido duplicado para la segunda pestaña -->
+                <div class="table-responsive mt-3" style="overflow-x: auto;">
+                  <table class="table table-striped TDDataTable">
+                    <thead>
+                      <tr>
+                        <th>
+                          <label for="AGENCIA">AGENCIA</label>
+                          <input type="text" id="AGENCIA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="CLIENTE">CLIENTE</label>
+                          <input type="text" id="CLIENTE" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="PRODUCTO">PRODUCTO</label>
+                          <input type="text" id="PRODUCTO" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="centroCostos">Centro de Costos</label>
+                          <input type="text" id="centroCostos" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="NO. PRODUCTO">NO. PRODUCTO</label>
+                          <input type="text" id="NO. PRODUCTO" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="DEAL">DEAL</label>
+                          <input type="text" id="DEAL" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="CAMPAÑA">CAMPAÑA</label>
+                          <input type="text" id="CAMPAÑA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="VERSIÓN">VERSIÓN</label>
+                          <input type="text" id="VERSIÓN" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="DURACIÓN">DURACIÓN</label>
+                          <input type="text" id="DURACIÓN" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="CANAL">CANAL</label>
+                          <input type="text" id="CANAL" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="FECHA PROGRAMADA">FECHA PROGRAMADA</label>
+                          <input type="date" id="FECHA_PROGRAMADA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="HORA">HORA</label>
+                          <input type="time" id="HORA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="HORA PROGRAMADA">HORA PROGRAMADA</label>
+                          <input type="time" id="HORA_PROGRAMADA" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="HORARIO TRANSMITIDO">HORARIO TRANSMITIDO</label>
+                          <input type="time" id="HORARIO_TRANSMITIDO" class="form-control" />
+                        </th>
+                        <th>
+                          <label for="IMPACTOS">IMPACTOS</label>
+                          <input type="text" id="IMPACTOS" class="form-control" />
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Aquí puedes agregar filas de la tabla -->
+                      <tr>
+                        <td>PHD</td>
+                        <td>SANOFI AVENTIS</td>
+                        <td>SANOFA-ALLEGRA</td>
+                        <td>4013</td>
+                        <td>16359</td>
+                        <td>318869</td>
+                        <td>-</td>
+                        <td>15</td>
+                        <td>CANAL 2</td>
+                        <td><input type="date" value="2024-10-22" class="form-control" /></td>
+                        <td><input type="time" value="22:00" class="form-control" /></td>
+                        <td><input type="time" value="22:15" class="form-control" /></td>
+                        <td><input type="time" value="22:15" class="form-control" /></td>
+                        <td><input type="text" value="2.179.963" class="form-control" /></td>
+                        <td>2.179.963</td>
+                      </tr>
+                      <!-- Repite las filas para más registros -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+            <!-- Termina tabla -->
+
+
+
+         
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+  <script src="js/password.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/crud.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/accordion-icon.js"></script>
+  <script src="js/url.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
